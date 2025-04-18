@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoiceGPT Screen Reader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>VoiceGPT Screen Reader</h1>
+    <div class="control-panel">
+      <button id="toggleListening" class="primary-button">Start Listening</button>
+      <div class="status-indicator">
+        <span id="statusText">Inactive</span>
+        <div id="statusLight" class="status-light inactive"></div>
+      </div>
+    </div>
+    
+    <div class="conversation-container">
+      <div id="conversation" class="conversation">
+        <!-- Conversation history will appear here -->
+      </div>
+    </div>
+    
+    <div class="settings-panel">
+      <h2>Settings</h2>
+      <div class="setting">
+        <label for="voiceSelect">Voice:</label>
+        <select id="voiceSelect"></select>
+      </div>
+      <div class="setting">
+        <label for="speechRate">Speech Rate:</label>
+        <input type="range" id="speechRate" min="0.5" max="2" step="0.1" value="1">
+        <span id="rateValue">1.0</span>
+      </div>
+      <div class="setting">
+        <label for="apiKeyInput">API Key:</label>
+        <input type="password" id="apiKeyInput" placeholder="Enter your API key">
+        <button id="saveApiKey" class="small-button">Save</button>
+        <button id="testApiConnection" class="small-button test-button">Test API</button>
+      </div>
+      <div class="setting">
+        <label for="modelSelect">AI Model:</label>
+        <select id="modelSelect">
+          <option value="mistral-large">Mistral Large</option>
+          <option value="mistral-small">Mistral Small</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="shortcuts-panel">
+      <h2>Keyboard Shortcuts</h2>
+      <ul>
+        <li><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>V</kbd>: Start/Stop voice input</li>
+        <li><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>: Stop speech output</li>
+      </ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

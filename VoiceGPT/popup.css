@@ -1,0 +1,246 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 350px;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f7;
+  color: #333;
+}
+
+.container {
+  padding: 15px;
+}
+
+h1 {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+  background-color: #0055aa;
+}
+
+.small-button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.small-button:hover {
+  background-color: #0055aa;
+}
+
+.test-button {
+  background-color: #4CAF50;
+  margin-left: 5px;
+}
+
+.test-button:hover {
+  background-color: #388E3C;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.status-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+
+.status-light.active {
+  background-color: #4CAF50;
+  box-shadow: 0 0 8px #4CAF50;
+}
+
+.status-light.inactive {
+  background-color: #ccc;
+}
+
+.status-light.processing {
+  background-color: #FFC107;
+  box-shadow: 0 0 8px #FFC107;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.conversation-container {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 85%;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #e1f5fe;
+}
+
+.assistant-message {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+}
+
+.system-message {
+  align-self: center;
+  background-color: #ffecb3;
+  font-style: italic;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.settings-panel, .shortcuts-panel {
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.setting {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting label {
+  flex: 1;
+}
+
+.setting input[type="range"] {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.setting select, .setting input[type="password"] {
+  flex: 1.5;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #0066cc;
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px #0066cc;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+}
+
+.setting-description {
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: 5px;
+}
+
+kbd {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  color: #333;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0 2px;
+  padding: 2px 5px;
+}
